@@ -1,15 +1,14 @@
 package com.github.trojnartom.singinglessonscalendar.model;
 
 import lombok.*;
+import org.hibernate.validator.constraints.Length;
+import org.hibernate.validator.constraints.UniqueElements;
 
 import javax.persistence.*;
-import javax.validation.constraints.Email;
-import javax.validation.constraints.Max;
-import javax.validation.constraints.Min;
-import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.*;
 
 @Entity
-@Table(name = "users")
+@Table(name = "user")
 @Getter
 @Setter
 @ToString
@@ -24,24 +23,29 @@ public class UserEntity {
     private Long id;
 
     @NotBlank
-    @Min(3)
+    @Length(min = 3)
     @Column(name = "first_name")
     private String firstName;
 
     @NotBlank
-    @Min(3)
+    @Length(min = 3)
     @Column(name = "last_name")
     private String lastName;
 
+    @UniqueElements
     @NotBlank
     @Email
     private String email;
 
+    @UniqueElements
     @Column(name = "phone_number")
     private String phoneNumber;
 
-    @NotBlank
-    @Max(1)
-    @Column(name = "is_admin")
-    private String isAdmin;
+    @NotNull
+    @Column(name = "role")
+    private String role;
+
+    @NotNull
+    @Column(name = "password")
+    private String password;
 }
