@@ -25,7 +25,7 @@
     <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet" />
     <!-- Core theme CSS (includes Bootstrap)-->
-    <link href="../css/style.css" rel="stylesheet" type="text/css">
+    <link href="css/styles.css" rel="stylesheet" type="text/css">
 </head>
 <body id="page-top">
 <!-- Navigation-->
@@ -61,7 +61,7 @@
 <section class="about-section text-center" id="about">
     <div class="container px-4 px-lg-5">
         <div style="display: flex" class="row gx-4 gx-lg-5 justify-content-center" >
-            <div style="flex: 40%" class="col-xl-8 col-lg-7"><img class="img-fluid mb-3 mb-lg-0" src="../assets/moje/Natalia.jpg" alt="..." />
+            <div style="flex: 40%" class="col-xl-8 col-lg-7"><img class="img-fluid mb-3 mb-lg-0" src="assets/moje/Natalia.jpg" alt="..." />
             </div>
             <div style="flex: 60%" class="col-lg-8">
                 <h2 class="text-white mb-4">Natalia Cieślachowska-Trojnar</h2>
