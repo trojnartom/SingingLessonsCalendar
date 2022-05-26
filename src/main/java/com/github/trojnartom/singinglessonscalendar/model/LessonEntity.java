@@ -5,6 +5,7 @@ import lombok.*;
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
@@ -35,6 +36,13 @@ public class LessonEntity {
     private Integer rating;
 
     private String comments;
+
+    @NotNull
+    private String status;
+
+    @NotNull
+    @Size(min = 30, max = 60)
+    private Integer duration;
 
     @NotNull
     @ManyToOne

@@ -12,4 +12,9 @@ public class HomePageController {
     public String homePageView() {
         return "index";
     }
+
+    @GetMapping("/panel")
+    public String panelPageView() {
+        return "header";
+    }
 }

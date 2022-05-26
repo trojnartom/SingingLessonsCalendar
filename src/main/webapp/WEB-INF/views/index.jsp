@@ -49,9 +49,9 @@
 <header class="masthead">
     <div class="container px-4 px-lg-5 d-flex h-100 align-items-center justify-content-center">
         <div class="d-flex justify-content-center">
-            <div class="text-center">
+            <div class="text-center" >
                 <h1 class="mx-auto my-0 text-uppercase">Natalia Cieślachowska-Trojnar</h1>
-                <h2 class="text-white-50 mx-auto mt-2 mb-5">Z miłości do muzyki</h2>
+                <h2 class="text-white-50 mx-auto mt-2 mb-5" >Z miłości do muzyki</h2>
                 <a class="btn btn-primary" href="#about">Rozpocznij</a>
             </div>
         </div>
@@ -60,13 +60,18 @@
 <!-- About-->
 <section class="about-section text-center" id="about">
     <div class="container px-4 px-lg-5">
-        <div style="display: flex" class="row gx-4 gx-lg-5 justify-content-center" >
+        <div style="display: flex; align-items: center" class="row gx-4 gx-lg-5 justify-content-center" >
             <div style="flex: 40%" class="col-xl-8 col-lg-7"><img class="img-fluid mb-3 mb-lg-0" src="assets/moje/Natalia.jpg" alt="..." />
             </div>
             <div style="flex: 60%" class="col-lg-8">
                 <h2 class="text-white mb-4">Natalia Cieślachowska-Trojnar</h2>
-                <p class="text-white-50">
-                    Nazywam się Natalia Cieślachowska-Trojnar i moją pasją jest muzyka.
+                <p class="text-white-50" >
+                    <p class="text-white-50" style="text-align: justify">Jest absolwentką  Akademii Muzycznej im. Grażyny i Kiejstuta Bacewiczów w Łodzi na wydziale wokalno - aktorskim w klasie prof. Delfiny Ambroziak oraz Grażyny Krajewskiej - Ambroziak
+                    Naukę śpiewu rozpoczęła jednak w 2004 roku na Podkarpaciu, gdzie pod kierunkiem dr. Anny Szałygi- Kuźmy uczęszczała do Państwowej Szkoły Muzycznej II stopnia im. K. Szymanowskiego w Rzeszowie.
+                Już podczas nauki w rzeszowskiej szkole była finalistką i laureatką ogólnopolskich konkursów wokalnych we Wrocławiu, Gliwicach i Krakowie.  Od 2005 roku współpracuje jako solistka z zespołem Resovia Saltans działającym przy Uniwersytecie Rzeszowskim.</p>
+                <p class="text-white-50 " style="text-align: justify">Podczas studiów Natalia Cieślachowska-Trojnar  uczestniczyła w wielu przedsięwziąciach, takich jak opera Czarodziejski flet" (rola Papageny) W.A. Mozarta, "Kantata o kawie"J.S. Bacha (rola Lieschen) czy „Gianni Schicchi" G. Pucciniego (Lauretta), „La serva Padrona” (Serpina). Brała również udział w przedstawieniach teatralnych, m.in. sztuce "Scenariusz dla trzech aktorów" Bogusława Schaeffera, którą oglądał sam mistrz.</p>
+                <p class="text-white-50" style="text-align: justify">Natalia Cieślachowska-Trojnar  ma w swoim repertuarze także liczne utwory kameralne i oratoryjne, wykonywała partie sopranowe  w Mszy  G-Dur oraz C-Dur F. Schuberta, wydane na płytach, a także a- moll J. Elsnera. Utwory te z powodzeniem udało jej się wykonywać w kraju, ale także za granicą (Rzym, Mediolan). Z powodzeniem koncertowała w Niemczech, Szwajcarii, Czechach, Ukrainie, Słowacji, Turcji, a także w Ameryce Południowej.  Od lat współpracuje z Krośnieńskim i  Rzeszowskim Towarzystwem Muzycznym, biorąc udział w rożnych przedsięwzięciach. Od tego roku jest solistką Rzeszowskiego Teatru Muzycznego. Brała  także udział w licznych kursach interpretacji muzycznej u takich pedagogów jak Jolanta Janucik, Olga Pasiecznik, czy  Teresa Żylis -Gara. Od 2014 roku jest pedagogiem  prowadząc klasę wokalną.</p>
+
                 </p>
             </div>
         </div>
