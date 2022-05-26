@@ -1,10 +1,11 @@
 <%--
   Created by IntelliJ IDEA.
   User: tomasztrojnar
-  Date: 25/05/2022
-  Time: 11:55
+  Date: 26/05/2022
+  Time: 12:48
   To change this template use File | Settings | File Templates.
 --%>
+
 <%@ page isELIgnored="false" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
@@ -24,7 +25,7 @@
     <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet" />
     <!-- Core theme CSS (includes Bootstrap)-->
-    <link href="views/css/styles.css" rel="stylesheet" />
+    <link href="../css/style.css" rel="stylesheet" type="text/css">
 </head>
 <body id="page-top">
 <!-- Navigation-->
@@ -60,7 +61,7 @@
 <section class="about-section text-center" id="about">
     <div class="container px-4 px-lg-5">
         <div style="display: flex" class="row gx-4 gx-lg-5 justify-content-center" >
-            <div style="flex: 40%" class="col-xl-8 col-lg-7"><img class="img-fluid mb-3 mb-lg-0" src="media/moje/Natalia.jpg" alt="..." />
+            <div style="flex: 40%" class="col-xl-8 col-lg-7"><img class="img-fluid mb-3 mb-lg-0" src="../assets/moje/Natalia.jpg" alt="..." />
             </div>
             <div style="flex: 60%" class="col-lg-8">
                 <h2 class="text-white mb-4">Natalia Cieślachowska-Trojnar</h2>
@@ -117,16 +118,49 @@
         </div>
     </div>
 </section>
-<!-- Kontakt-->
+<!-- Signup-->
 <section class="signup-section" id="signup">
-
-
-    <%--    Tutaj dodać dane kontaktowe--%>
-
-
-
-
-
+    <div class="container px-4 px-lg-5">
+        <div class="row gx-4 gx-lg-5">
+            <div class="col-md-10 col-lg-8 mx-auto text-center">
+                <i class="far fa-paper-plane fa-2x mb-2 text-white"></i>
+                <h2 class="text-white mb-5">Subscribe to receive updates!</h2>
+                <!-- * * * * * * * * * * * * * * *-->
+                <!-- * * SB Forms Contact Form * *-->
+                <!-- * * * * * * * * * * * * * * *-->
+                <!-- This form is pre-integrated with SB Forms.-->
+                <!-- To make this form functional, sign up at-->
+                <!-- https://startbootstrap.com/solution/contact-forms-->
+                <!-- to get an API token!-->
+                <form class="form-signup" id="contactForm" data-sb-form-api-token="API_TOKEN">
+                    <!-- Email address input-->
+                    <div class="row input-group-newsletter">
+                        <div class="col"><input class="form-control" id="emailAddress" type="email" placeholder="Enter email address..." aria-label="Enter email address..." data-sb-validations="required,email" /></div>
+                        <div class="col-auto"><button class="btn btn-primary disabled" id="submitButton" type="submit">Notify Me!</button></div>
+                    </div>
+                    <div class="invalid-feedback mt-2" data-sb-feedback="emailAddress:required">An email is required.</div>
+                    <div class="invalid-feedback mt-2" data-sb-feedback="emailAddress:email">Email is not valid.</div>
+                    <!-- Submit success message-->
+                    <!---->
+                    <!-- This is what your users will see when the form-->
+                    <!-- has successfully submitted-->
+                    <div class="d-none" id="submitSuccessMessage">
+                        <div class="text-center mb-3 mt-2 text-white">
+                            <div class="fw-bolder">Form submission successful!</div>
+                            To activate this form, sign up at
+                            <br />
+                            <a href="https://startbootstrap.com/solution/contact-forms">https://startbootstrap.com/solution/contact-forms</a>
+                        </div>
+                    </div>
+                    <!-- Submit error message-->
+                    <!---->
+                    <!-- This is what your users will see when there is-->
+                    <!-- an error submitting the form-->
+                    <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3 mt-2">Error sending message!</div></div>
+                </form>
+            </div>
+        </div>
+    </div>
 </section>
 <!-- Contact-->
 <section class="contact-section bg-black">
@@ -183,3 +217,5 @@
 <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
 </body>
 </html>
+
+
