@@ -34,9 +34,14 @@
                 <form:errors path="firstName"/>  </br>
                 Nazwisko: <form:input path="lastName" value="${user.lastName}"/>
                 <form:errors path="lastName"/>  </br>
+                Numer telefonu: <form:input path="phoneNumber" value="${user.phoneNumber}"/>
+                <form:errors path="phoneNumber"/>  </br>
                 Password: <form:password path="password" value="${user.password}"/>
                 <form:errors path="password"/>  </br>
                 <form:hidden path="id" value="${user.id}"/>
+                <form:hidden path="email" value="${user.email}"/>
+                <form:hidden path="role" value="${user.role}"/>
+                <input type="submit" value="Zapisz"/>
             </form:form>
 <%--            <label for="inputName" class="form-label">Imię</label>--%>
 <%--            <input type="text" value="${user.firstName}" id="inputName" class="form-control">--%>
