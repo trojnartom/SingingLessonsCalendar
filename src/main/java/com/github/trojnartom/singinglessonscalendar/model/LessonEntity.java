@@ -1,6 +1,7 @@
 package com.github.trojnartom.singinglessonscalendar.model;
 
 import lombok.*;
+import lombok.experimental.SuperBuilder;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
@@ -17,34 +18,32 @@ import java.util.Date;
 @Getter
 @Setter
 @ToString
-@EqualsAndHashCode(of = "id")
 @AllArgsConstructor
 @NoArgsConstructor
-@Builder
+@SuperBuilder
 public class LessonEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @NotNull (message = "Date is mandatory")
+
     private LocalDate date;
 
-    @NotNull(message = "Time is mandatory")
+
     private LocalTime time;
 
     private Integer rating;
 
+//    jak dodać walidację żeby komentarz był wymagany po lekcji?
     private String comments;
 
-    @NotNull
     private String status;
 
-    @NotNull
-    @Size(min = 30, max = 60)
-    private Integer duration;
+//    @NotNull
+//    @Size(min = 30, max = 60)
+//    private Integer duration;
 
-    @NotNull
     @ManyToOne
     @JoinColumn(name = "user_id")
     private UserEntity user;
