@@ -27,9 +27,23 @@
 <div id="layoutSidenav">
     <jsp:include page="../../views/static/leftNavUser.jsp"></jsp:include>
     <div id="layoutSidenav_content">
-
-        <%--        tutaj treść w środku--%>
-
+        <table class="table">
+            <thead>
+            <tr>
+                <th scope="col">Data</th>
+                <th scope="col">Godzina</th>
+                <th scope="col">Status</th>
+            </tr>
+            </thead>
+            <c:forEach var="lesson" items="${lessons}">
+            <tbody>
+            <tr>
+                <td>${lesson.date}</td>
+                <td>${lesson.time}</td>
+                <td>${lesson.status}</td>
+            </tbody>
+            </c:forEach>
+        </table>
         <jsp:include page="../../views/static/footer.jsp"></jsp:include>
     </div>
 </div>

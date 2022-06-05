@@ -17,7 +17,7 @@ import java.util.Date;
 @Table(name = "lessons")
 @Getter
 @Setter
-@ToString
+@ToString(callSuper = true)
 @AllArgsConstructor
 @NoArgsConstructor
 @SuperBuilder
@@ -35,7 +35,6 @@ public class LessonEntity {
 
     private Integer rating;
 
-//    jak dodać walidację żeby komentarz był wymagany po lekcji?
     private String comments;
 
     private String status;

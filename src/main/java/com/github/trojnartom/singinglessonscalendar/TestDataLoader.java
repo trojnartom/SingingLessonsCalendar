@@ -47,23 +47,46 @@ public class TestDataLoader {
 
         lessonRepository.save(LessonEntity.builder()
                 .date(LocalDate.parse("2022-07-03"))
-                .time(LocalTime.parse("17:00:00"))
-                .status("reserved")
+                .time(LocalTime.parse("17:00"))
+                .status("Zarezerwowana")
+                .user(userRepository.findUserById(1L))
                 .build());
         lessonRepository.save(LessonEntity.builder()
                 .date(LocalDate.parse("2022-07-27"))
-                .time(LocalTime.parse("18:00:00"))
-                .status("reserved")
+                .time(LocalTime.parse("18:00"))
+                .status("Zarezerwowana")
+                .user(userRepository.findUserById(2L))
                 .build());
         lessonRepository.save(LessonEntity.builder()
-                .date(LocalDate.parse("2022-04-03"))
-                .time(LocalTime.parse("15:00:00"))
-                .status("Finished")
+                .date(LocalDate.parse("2022-10-03"))
+                .time(LocalTime.parse("15:00"))
+                .status("Utworzona")
+                .build());
+        lessonRepository.save(LessonEntity.builder()
+                .date(LocalDate.parse("2022-10-03"))
+                .time(LocalTime.parse("16:00"))
+                .status("Utworzona")
+                .build());
+        lessonRepository.save(LessonEntity.builder()
+                .date(LocalDate.parse("2022-10-03"))
+                .time(LocalTime.parse("17:00"))
+                .status("Utworzona")
+                .build());
+        lessonRepository.save(LessonEntity.builder()
+                .date(LocalDate.parse("2022-12-03"))
+                .time(LocalTime.parse("16:00"))
+                .status("Utworzona")
                 .build());
         lessonRepository.save(LessonEntity.builder()
                 .date(LocalDate.parse("2022-03-17"))
-                .time(LocalTime.parse("17:30:00"))
-                .status("In progress")
+                .time(LocalTime.parse("17:30"))
+                .status("Oczekuje na komentarz")
+                .build());
+        lessonRepository.save(LessonEntity.builder()
+                .date(LocalDate.parse("2022-02-17"))
+                .time(LocalTime.parse("17:30"))
+                .status("Zakończona")
+                .comments("Tutaj już jest komentarz")
                 .build());
         log.debug("Data added succesfully");
     }

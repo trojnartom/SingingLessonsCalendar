@@ -12,7 +12,7 @@ import javax.validation.constraints.*;
 @Table(name = "user")
 @Getter
 @Setter
-@ToString
+@ToString(callSuper = true)
 @AllArgsConstructor
 @NoArgsConstructor
 @SuperBuilder
@@ -39,4 +39,5 @@ public class UserEntity {
 
     @Column(name = "password")
     private String password;
+
 }
