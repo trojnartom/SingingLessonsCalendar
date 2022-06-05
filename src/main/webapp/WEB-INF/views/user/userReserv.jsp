@@ -30,10 +30,8 @@
 
         <div style="margin-left: 20px; margin-top: 20px; margin-right: 40%; font-size: x-large">
             <h2>Wybierz lekcję: </h2>
-            <form:form method="post" action="/panel/user/reserv/" modelAttribute="lessons">
-                <form:radiobuttons path="" items="${lessons}" itemValue="id" itemLabel="date"/>
-<%--                <form:hidden path="id" value="${id}"/>--%>
-                <form:hidden path="user" value="${user}"/>
+            <form:form method="post" modelAttribute="lesson">
+                <form:select path="id" items="${lessons}" itemLabel="fullTime" itemValue="id"></form:select>
                 <form:button value="Zarezerwuj"/>
             </form:form>
         </div>
@@ -41,6 +39,14 @@
         <jsp:include page="../../views/static/footer.jsp"></jsp:include>
     </div>
 </div>
+<script>
+    const date = document.querySelector(".date");
+    const time = document.querySelector(".time");
+
+    if()
+</script>
+
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
         crossorigin="anonymous"></script>
 <script src="../../../js/scripts.js"></script>

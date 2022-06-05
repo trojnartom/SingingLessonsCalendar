@@ -39,6 +39,12 @@ public class LessonEntity {
 
     private String status;
 
+
+    public String getFullTime() {
+        return  this.getDate() + " " + this.getTime();
+    }
+
+
 //    @NotNull
 //    @Size(min = 30, max = 60)
 //    private Integer duration;

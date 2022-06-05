@@ -17,4 +17,6 @@ public interface LessonRepository extends JpaRepository <LessonEntity, Long> {
     @Query(value = "SELECT * FROM lessons WHERE status = :status", nativeQuery = true)
     List<LessonEntity> findAllByStatus (@Param("status") String status);
 
+    LessonEntity findLessonEntitiesById(Long id);
+
 }
