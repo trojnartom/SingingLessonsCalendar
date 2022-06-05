@@ -33,17 +33,15 @@ public class UserReservController {
     }
 
 
+
     @PostMapping("/reserv")
     public String userReservData (@ModelAttribute("lessons") LessonEntity lessons, BindingResult result) {
         UserEntity user = userRepository.findUserById(1L);
         if (result.hasErrors()) {
             return "redirect:/panel/user/reserv/" + user.getId();
         }
-        lessons.setId(lessons.getId());
-        lessons.setDate(lessons.getDate());
-        lessons.setTime(lessons.getTime());
         lessons.setUser(user);
-        lessons.setStatus("Zarezerwowano");
+        lessons.setComments("Zarezerwowano");
         lessonRepository.save(lessons);
 
         return "redirect:/panel/user/list/" + user.getId();

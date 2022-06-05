@@ -31,9 +31,9 @@
         <div style="margin-left: 20px; margin-top: 20px; margin-right: 40%; font-size: x-large">
             <h2>Wybierz lekcję: </h2>
             <form:form method="post" action="/panel/user/reserv/" modelAttribute="lessons">
-                <c:forEach items="${lessons}" var="lesson">
-                    <form:radiobutton path="user_id" /> ${lesson.date} - ${lesson.time} </br>
-                </c:forEach>
+                <form:radiobuttons path="" items="${lessons}" itemValue="id" itemLabel="date"/>
+<%--                <form:hidden path="id" value="${id}"/>--%>
+                <form:hidden path="user" value="${user}"/>
                 <form:button value="Zarezerwuj"/>
             </form:form>
         </div>

@@ -81,12 +81,14 @@ public class TestDataLoader {
                 .date(LocalDate.parse("2022-03-17"))
                 .time(LocalTime.parse("17:30"))
                 .status("Oczekuje na komentarz")
+                .user(userRepository.findUserById(1L))
                 .build());
         lessonRepository.save(LessonEntity.builder()
                 .date(LocalDate.parse("2022-02-17"))
                 .time(LocalTime.parse("17:30"))
                 .status("Zakończona")
                 .comments("Tutaj już jest komentarz")
+                .user(userRepository.findUserById(2L))
                 .build());
         log.debug("Data added succesfully");
     }

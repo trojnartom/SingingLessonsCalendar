@@ -1,8 +1,8 @@
 <%--
   Created by IntelliJ IDEA.
   User: tomasztrojnar
-  Date: 01/06/2022
-  Time: 17:04
+  Date: 05/06/2022
+  Time: 15:21
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page isELIgnored="false" %>
@@ -15,12 +15,12 @@
         <div class="sb-sidenav-menu">
             <div class="nav">
                 <div class="sb-sidenav-menu-heading">Panel użytkownika</div>
-                <a class="nav-link" href="/panel/user/reserv/${user.id}">
+                <a class="nav-link" href="/panel/admin/reserv/${user.id}">
                     <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                     Zarezerwuj lekcję
                 </a>
 
-                <a class="nav-link" href="/panel/user/list/${user.id}">
+                <a class="nav-link" href="/panel/admin/list/${user.id}">
                     <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
                     Lista lekcji
                 </a>
@@ -29,7 +29,7 @@
         <div class="sb-sidenav-footer">
             <div class="small">Zalogowany użytkownik:</div>
             ${user.firstName} ${user.lastName}
-<%--            tutaj trzeba pobrać nazwę użytkownika--%>
+            <%--            tutaj trzeba pobrać nazwę użytkownika--%>
         </div>
     </nav>
 </div>

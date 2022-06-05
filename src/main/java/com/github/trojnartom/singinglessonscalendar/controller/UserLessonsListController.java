@@ -16,7 +16,7 @@ import java.util.Optional;
 @Controller
 @RequestMapping("/panel/user")
 @RequiredArgsConstructor
-public class UserListController {
+public class UserLessonsListController {
 
     private final UserRepository userRepository;
     private final LessonRepository lessonRepository;
