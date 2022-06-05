@@ -7,6 +7,7 @@ import org.hibernate.validator.constraints.UniqueElements;
 
 import javax.persistence.*;
 import javax.validation.constraints.*;
+import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "user")
@@ -39,5 +40,6 @@ public class UserEntity {
 
     @Column(name = "password")
     private String password;
+
 
 }
