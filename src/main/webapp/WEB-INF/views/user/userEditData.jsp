@@ -43,12 +43,6 @@
                 <form:hidden path="role" value="${user.role}"/>
                 <input type="submit" value="Zapisz"/>
             </form:form>
-<%--            <label for="inputName" class="form-label">Imię</label>--%>
-<%--            <input type="text" value="${user.firstName}" id="inputName" class="form-control">--%>
-<%--            <label for="inputSurName" class="form-label">Nazwisko</label>--%>
-<%--            <input type="text" value="${user.lastName}" id="inputSurName" class="form-control">--%>
-<%--            <label for="inputPassword5" class="form-label">Hasło</label>--%>
-<%--            <input type="password" id="inputPassword5" class="form-control" aria-describedby="passwordHelpBlock">--%>
             <div id="passwordHelpBlock" class="form-text">
             Your password must be 8-20 characters long, contain letters and numbers, and must not contain spaces, special characters, or emoji.
             </div>

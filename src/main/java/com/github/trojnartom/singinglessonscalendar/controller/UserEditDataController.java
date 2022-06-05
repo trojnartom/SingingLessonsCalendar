@@ -31,7 +31,7 @@ public class UserEditDataController {
             return "redirect:/panel/user/" + user.getId();
         }
         userRepository.save(user);
-        return "redirect:/panel/user/list";
+        return "redirect:/panel/user/list/" + user.getId();
     }
 
 
