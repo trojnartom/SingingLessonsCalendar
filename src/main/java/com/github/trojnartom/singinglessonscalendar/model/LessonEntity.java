@@ -2,6 +2,7 @@ package com.github.trojnartom.singinglessonscalendar.model;
 
 import lombok.*;
 import lombok.experimental.SuperBuilder;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;

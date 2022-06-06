@@ -12,14 +12,14 @@
 
 <html lang="en">
 <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <meta name="description" content="" />
-    <meta name="author" content="" />
-    <title>Edytuj dane</title>
-    <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
-    <link href="../../../css/stylesTable.css" rel="stylesheet" />
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <meta name="description" content=""/>
+    <meta name="author" content=""/>
+    <title>Lista wszystkich lekcji</title>
+    <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet"/>
+    <link href="../../../css/stylesTable.css" rel="stylesheet"/>
     <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
 </head>
 <body class="sb-nav-fixed">
@@ -27,7 +27,7 @@
 <div id="layoutSidenav">
     <jsp:include page="../../views/static/leftNavAdmin.jsp"></jsp:include>
     <div id="layoutSidenav_content">
-
+        <h2 style="margin-top: 10px; margin-left: 10px">Lista wszystkich lekcji</h2>
         <table class="table">
             <thead>
             <tr>
@@ -45,7 +45,7 @@
                     <td>${lesson.time}</td>
                     <td>${lesson.user.firstName} ${lesson.user.lastName}</td>
                     <td>${lesson.status}
-                    <c:if test="${lesson.status.equals('Oczekuje na komentarz')}">
+                        <c:if test="${lesson.status.equals('Oczekuje na komentarz')}">
                     <td><a href="/panel/admin/comment"/>Skomentuj</td>
                     </c:if>
                     <c:if test="${lesson.status.equals('Zakończona')}">
@@ -59,7 +59,8 @@
         <jsp:include page="../../views/static/footer.jsp"></jsp:include>
     </div>
 </div>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        crossorigin="anonymous"></script>
 <script src="../../../js/scripts.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" crossorigin="anonymous"></script>
 <script src="../../../js/datatables-simple-demo.js"></script>
