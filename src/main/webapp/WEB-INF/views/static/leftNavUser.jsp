@@ -15,7 +15,7 @@
         <div class="sb-sidenav-menu">
             <div class="nav">
                 <div class="sb-sidenav-menu-heading">Panel użytkownika</div>
-                <a class="nav-link" href="/panel/user/reserv/${user.id}">
+                <a class="nav-link" href="/panel/user/reserve/${user.id}">
                     <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                     Zarezerwuj lekcję
                 </a>
