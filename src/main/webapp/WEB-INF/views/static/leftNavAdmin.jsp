@@ -21,7 +21,7 @@
                     Dashboard
                 </a>
 
-                <a class="nav-link" href="/panel/admin/addDate/${user.id}">
+                <a class="nav-link" href="/panel/admin/add/${user.id}">
                     <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                     Dodaj terminy
                 </a>

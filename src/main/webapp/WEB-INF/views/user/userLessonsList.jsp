@@ -27,6 +27,7 @@
 <div id="layoutSidenav">
     <jsp:include page="../../views/static/leftNavUser.jsp"></jsp:include>
     <div id="layoutSidenav_content">
+        <h2 style="margin-top: 10px; margin-left: 10px">Lista zarezerwowanych lekcji</h2>
         <table class="table">
             <thead>
             <tr>

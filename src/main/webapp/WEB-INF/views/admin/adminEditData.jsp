@@ -29,7 +29,8 @@
     <jsp:include page="../../views/static/leftNavAdmin.jsp"></jsp:include>
     <div id="layoutSidenav_content" >
         <div style="margin-left: 20px; margin-top: 20px; margin-right: 40%; font-size: x-large">
-            <form:form method="post" action="/panel/user/edit" modelAttribute="user">
+            <h2 style="margin-top: 10px; margin-left: 10px; margin-bottom: 2%">Edytuj swoje dane</h2>
+            <form:form method="post" action="/panel/admin/edit" modelAttribute="user">
                 Imię: <form:input path="firstName" value="${user.firstName}"/>
                 <form:errors path="firstName"/>  </br>
                 Nazwisko: <form:input path="lastName" value="${user.lastName}"/>

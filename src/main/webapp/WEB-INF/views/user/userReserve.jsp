@@ -27,7 +27,7 @@
 <div id="layoutSidenav">
     <jsp:include page="../../views/static/leftNavUser.jsp"></jsp:include>
     <div id="layoutSidenav_content">
-
+        <h2 style="margin-top: 10px; margin-left: 10px">Zarezerwuj lekcje</h2>
         <div style="margin-left: 20px; margin-top: 20px; margin-right: 40%; font-size: x-large">
             <h2>Wybierz lekcję: </h2>
             <form:form method="post" modelAttribute="lesson">

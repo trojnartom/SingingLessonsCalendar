@@ -28,7 +28,7 @@ public class UserEditDataController {
     @PostMapping("/edit")
     public String userEditData(@ModelAttribute("user") UserEntity user, BindingResult result) {
         if (result.hasErrors()) {
-            return "redirect:/panel/user/" + user.getId();
+            return "redirect:/panel/user/edit/" + user.getId();
         }
         userRepository.save(user);
         return "redirect:/panel/user/list/" + user.getId();
