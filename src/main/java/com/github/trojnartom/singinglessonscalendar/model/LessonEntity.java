@@ -26,32 +26,22 @@ public class LessonEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
-
     private LocalDate date;
-
-
     private LocalTime time;
-
     private Integer rating;
-
     private String comments;
-
     private String status;
 
-
     public String getFullTime() {
-        return  this.getDate() + " " + this.getTime();
+        return this.getDate() + " " + this.getTime();
     }
-
-
-//    @NotNull
-//    @Size(min = 30, max = 60)
-//    private Integer duration;
 
     @ManyToOne
     @JoinColumn(name = "user_id")
     private UserEntity user;
 
+//    @NotNull
+//    @Size(min = 30, max = 60)
+//    private Integer duration;
 
 }

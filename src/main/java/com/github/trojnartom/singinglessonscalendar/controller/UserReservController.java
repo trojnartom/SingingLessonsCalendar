@@ -24,20 +24,22 @@ public class UserReservController {
     private final UserRepository userRepository;
 
 
-    @GetMapping("/reserv/{id}")
+    @GetMapping("/reserve/{id}")
     public String userReservView (@PathVariable Long id, Model model) {
         UserEntity user = userRepository.findUserById(id);
         List<LessonEntity> lessons = lessonRepository.findAllByStatus("Utworzona");
         model.addAttribute("lesson", new LessonEntity());
         model.addAttribute("lessons", lessons);
         model.addAttribute("user", user);
-        return "/user/userReserv";
+        return "/user/userReserve";
     }
 
 
-
-    @PostMapping("/reserv/{id}")
+    @PostMapping("/reserve/{id}")
     public String userReservData (@ModelAttribute("lessons") LessonEntity lessons, BindingResult result, @PathVariable("id")Long id) {
+        if(result.hasErrors()) {
+            return "redirect:/panel/user/reserve" + id;
+        }
         LessonEntity lessonEntity = lessonRepository.findLessonEntitiesById(lessons.getId());
         lessonEntity.setUser(userRepository.findUserById(id));
         lessonEntity.setStatus("Zarezerwowano");

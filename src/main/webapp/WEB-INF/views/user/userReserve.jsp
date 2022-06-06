@@ -17,13 +17,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
     <meta name="description" content=""/>
     <meta name="author" content=""/>
-    <title>Edytuj dane</title>
+    <title>Zarezerwuj lekcje</title>
     <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet"/>
     <link href="../../../css/stylesTable.css" rel="stylesheet"/>
     <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
 </head>
 <body class="sb-nav-fixed">
-<jsp:include page="../../views/static/header.jsp"></jsp:include>
+<jsp:include page="../static/header.jsp"></jsp:include>
 <div id="layoutSidenav">
     <jsp:include page="../../views/static/leftNavUser.jsp"></jsp:include>
     <div id="layoutSidenav_content">
@@ -32,19 +32,14 @@
             <h2>Wybierz lekcję: </h2>
             <form:form method="post" modelAttribute="lesson">
                 <form:select path="id" items="${lessons}" itemLabel="fullTime" itemValue="id"></form:select>
-                <form:button value="Zarezerwuj"/>
+                <input type="submit" value="Zarezerwuj">
             </form:form>
         </div>
 
         <jsp:include page="../../views/static/footer.jsp"></jsp:include>
     </div>
 </div>
-<script>
-    const date = document.querySelector(".date");
-    const time = document.querySelector(".time");
 
-    if()
-</script>
 
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
