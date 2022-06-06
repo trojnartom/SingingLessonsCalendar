@@ -23,7 +23,7 @@
     <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
 </head>
 <body class="sb-nav-fixed">
-<jsp:include page="../../views/static/header.jsp"></jsp:include>
+<jsp:include page="../static/header.jsp"></jsp:include>
 <div id="layoutSidenav">
     <jsp:include page="../../views/static/leftNavAdmin.jsp"></jsp:include>
     <div id="layoutSidenav_content">
