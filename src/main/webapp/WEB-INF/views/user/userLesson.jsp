@@ -1,8 +1,8 @@
 <%--
   Created by IntelliJ IDEA.
   User: tomasztrojnar
-  Date: 28/05/2022
-  Time: 00:27
+  Date: 07/06/2022
+  Time: 20:07
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page isELIgnored="false" %>
@@ -17,38 +17,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title>Lista zarezerwowanych lekcji</title>
+    <title>Edytuj dane</title>
     <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
     <link href="../../../css/stylesTable.css" rel="stylesheet" />
     <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
 </head>
 <body class="sb-nav-fixed">
-<jsp:include page="../static/header.jsp"></jsp:include>
+<jsp:include page="../../views/static/header.jsp"></jsp:include>
 <div id="layoutSidenav">
     <jsp:include page="../../views/static/leftNavUser.jsp"></jsp:include>
     <div id="layoutSidenav_content">
-        <h2 style="margin-top: 10px; margin-left: 10px">Lista zarezerwowanych lekcji</h2>
-        <table class="table">
-            <thead>
-            <tr>
-                <th scope="col">Data</th>
-                <th scope="col">Godzina</th>
-                <th scope="col">Status</th>
-                <th scope="col">Akcje</th>
-            </tr>
-            </thead>
-            <c:forEach var="lesson" items="${lessons}">
-            <tbody>
-            <tr>
-                <td>${lesson.date}</td>
-                <td>${lesson.time}</td>
-                <td>${lesson.status}</td>
-            <c:if test="${lesson.status.equals('Zakończona')}">
-                <td><a href="/panel/user/lesson/${lesson.id}"/>Oceń</td>
-                </c:if>
-            </tbody>
-            </c:forEach>
-        </table>
+
+        <h2 style="margin-top: 10px; margin-left: 10px; margin-bottom: 2%">Szczegóły lekcji</h2>
+        <p>Data lekcji: ${lesson.date}</p>
+        <p>Godzina lekcji: ${lesson.time}</p>
+        <form:form method="post" action="/panel/user/lesson/${lesson.id}" modelAttribute="lesson">
+            Ocena lekcji: <form:input path="rating" value="${lesson.rating}" type="number" min="1" max="10" step="1"/>
+            <form:hidden path="id" value="${lesson.id}"/>
+            <form:hidden path="comments" value="${lesson.comments}"/>
+            <form:hidden path="date" value="${lesson.date}"/>
+            <form:hidden path="status" value="${lesson.status}"/>
+            <form:hidden path="time" value="${lesson.time}"/>
+            <form:hidden path="user" value="${user.id}"/>
+            <input type="submit" value="Oceń"> </br>
+        </form:form>
+        <p>Komentarz:</p> </br>
+        <p>${lesson.comments}</p>
+
         <jsp:include page="../../views/static/footer.jsp"></jsp:include>
     </div>
 </div>

@@ -35,6 +35,7 @@
                 <th scope="col">Godzina</th>
                 <th scope="col">Uczeń</th>
                 <th scope="col">Status</th>
+                <th scope="col">Ocena</th>
                 <th scope="col">Akcje</th>
             </tr>
             </thead>
@@ -44,7 +45,8 @@
                     <td>${lesson.date}</td>
                     <td>${lesson.time}</td>
                     <td>${lesson.user.firstName} ${lesson.user.lastName}</td>
-                    <td>${lesson.status}
+                    <td>${lesson.status}</td>
+                    <td>${lesson.rating}</td>
                         <c:if test="${lesson.status.equals('Oczekuje na komentarz')}">
                     <td><a href="/panel/admin/comment"/>Skomentuj</td>
                     </c:if>
