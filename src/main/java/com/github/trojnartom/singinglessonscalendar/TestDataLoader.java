@@ -36,6 +36,7 @@ public class TestDataLoader {
                 .email("trojnar.t@gmail.com")
                 .password("123")
                 .role("ADMIN")
+                .enable(true)
                 .build());
         userRepository.save(UserEntity.builder()
                 .firstName("Natalia")
@@ -43,6 +44,16 @@ public class TestDataLoader {
                 .email("ncieslachowska@gmail.com")
                 .password("456")
                 .role("USER")
+                .enable(true)
+                .build());
+
+        userRepository.save(UserEntity.builder()
+                .firstName("Maria")
+                .lastName("Trojnar")
+                .email("mariatrojnar@hotmail.com")
+                .password("888")
+                .role("USER")
+                .enable(false)
                 .build());
 
         lessonRepository.save(LessonEntity.builder()

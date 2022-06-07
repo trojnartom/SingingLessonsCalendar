@@ -5,9 +5,7 @@ import lombok.experimental.SuperBuilder;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
+import javax.validation.constraints.*;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
@@ -29,8 +27,13 @@ public class LessonEntity {
     private Long id;
     private LocalDate date;
     private LocalTime time;
+
+    @PositiveOrZero
+    @Min(1) @Max(10)
     private Integer rating;
     private String comments;
+
+    @NotBlank
     private String status;
 
     public String getFullTime() {

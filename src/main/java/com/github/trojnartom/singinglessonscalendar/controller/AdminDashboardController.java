@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import javax.servlet.http.HttpSession;
 import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -24,7 +25,7 @@ public class AdminDashboardController {
     private final LessonRepository lessonRepository;
 
     @GetMapping("/dashboard/{id}")
-    public String adminLessonsListView(@PathVariable Long id, Model model) {
+    public String adminLessonsListView(Model model, @PathVariable Long id) {
         UserEntity user = userRepository.findUserById(id);
         List<LessonEntity> lessons = lessonRepository.findAllByStatus("Zarezerwowana").stream()
                 .sorted(Comparator.comparing(LessonEntity::getDate))

@@ -13,6 +13,7 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @Controller
@@ -38,7 +39,7 @@ public class UserReservController {
     @PostMapping("/reserve/{id}")
     public String userReservData (@ModelAttribute("lessons") LessonEntity lessons, BindingResult result, @PathVariable("id")Long id) {
         if(result.hasErrors()) {
-            return "redirect:/panel/user/reserve" + id;
+            return "redirect:/panel/user/reserve/" + id;
         }
         LessonEntity lessonEntity = lessonRepository.findLessonEntitiesById(lessons.getId());
         lessonEntity.setUser(userRepository.findUserById(id));
