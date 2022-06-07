@@ -32,8 +32,7 @@
         <h2 style="margin-top: 10px; margin-left: 10px; margin-bottom: 10px">Dodawanie nowych terminów</h2>
         <div style="margin-left: 10px">
             <form:form modelAttribute="lesson" method="post">
-                <ftm:formatDate value="${lesson.date}" var="myDate" pattern="yyyy-MM-dd"/>
-                <form:input path="date" type="date" value="${myDate}" required="true"/>
+                <form:input path="date" type="date" value="${lesson.date}" required="true"/>
                 <form:input type="time" path="time" value="${lesson.time}" required="true"/> </br>
                 <form:hidden path="status" value="Utworzona"/>
                 <input type="submit" value="Utwórz termin">

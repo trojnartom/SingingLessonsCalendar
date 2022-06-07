@@ -11,6 +11,8 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpSession;
+import javax.validation.Valid;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
@@ -37,12 +39,10 @@ public class AdminAddDatesController {
     }
 
     @PostMapping("/add/{id}")
-    public String adminAddData (@ModelAttribute("lesson") LessonEntity lesson, BindingResult result, @PathVariable Long id) {
-//        if(result.hasErrors()) {
-//            return "redirect:/panel/admin/list/" + id;
-//        }
-//        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
-//        String date = lesson.getDate().format(formatter);
+    public String adminAddData (@ModelAttribute("lesson") @Valid LessonEntity lesson, BindingResult result, @PathVariable Long id) {
+        if(result.hasErrors()) {
+            return "redirect:/panel/admin/list/" + id;
+        }
         lesson.setId(lessonRepository.count()+1);
         lesson.setDate(lesson.getDate());
         lesson.setTime(lesson.getTime());
