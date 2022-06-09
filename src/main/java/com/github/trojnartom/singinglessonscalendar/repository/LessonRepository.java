@@ -19,4 +19,7 @@ public interface LessonRepository extends JpaRepository <LessonEntity, Long> {
 
     LessonEntity findLessonEntitiesById(Long id);
 
+    @Query(value = "SELECT * FROM lessons WHERE id = :id", nativeQuery = true)
+    LessonEntity findLessonByLessonId(@Param("id") Long id);
+
 }
