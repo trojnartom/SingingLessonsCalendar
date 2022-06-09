@@ -32,7 +32,7 @@
             <h2>Wybierz lekcję: </h2>
             <form:form method="post" modelAttribute="lesson">
                 <form:select path="id" items="${lessons}" itemLabel="fullTime" itemValue="id"></form:select>
-                <input type="submit" value="Zarezerwuj">
+                <input type="submit" value="Zarezerwuj"/>
             </form:form>
         </div>
 

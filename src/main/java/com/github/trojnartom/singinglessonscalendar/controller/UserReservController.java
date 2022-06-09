@@ -4,6 +4,7 @@ import com.github.trojnartom.singinglessonscalendar.model.LessonEntity;
 import com.github.trojnartom.singinglessonscalendar.model.UserEntity;
 import com.github.trojnartom.singinglessonscalendar.repository.LessonRepository;
 import com.github.trojnartom.singinglessonscalendar.repository.UserRepository;
+import com.github.trojnartom.singinglessonscalendar.service.LessonReserveService;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 import lombok.RequiredArgsConstructor;
@@ -23,6 +24,7 @@ public class UserReservController {
 
     private final LessonRepository lessonRepository;
     private final UserRepository userRepository;
+    private final LessonReserveService lessonService;
 
 
     @GetMapping("/reserve/{id}")
@@ -37,14 +39,9 @@ public class UserReservController {
 
 
     @PostMapping("/reserve/{id}")
-    public String userReservData (@ModelAttribute("lessons") LessonEntity lessons, BindingResult result, @PathVariable("id")Long id) {
-        if(result.hasErrors()) {
-            return "redirect:/panel/user/reserve/" + id;
-        }
-        LessonEntity lessonEntity = lessonRepository.findLessonEntitiesById(lessons.getId());
-        lessonEntity.setUser(userRepository.findUserById(id));
-        lessonEntity.setStatus("Zarezerwowano");
-        lessonRepository.save(lessonEntity);
+    public String userReservData (@ModelAttribute("lesson") LessonEntity lesson, @PathVariable("id")Long id) {
+
+        lessonService.modifyLessonReserve(id, lesson.getId());
 
         return "redirect:/panel/user/list/" + id;
     }
