@@ -12,14 +12,14 @@
 
 <html lang="en">
 <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <meta name="description" content="" />
-    <meta name="author" content="" />
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <meta name="description" content=""/>
+    <meta name="author" content=""/>
     <title>Lista zarezerwowanych lekcji</title>
-    <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
-    <link href="../../../css/stylesTable.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet"/>
+    <link href="../../../css/stylesTable.css" rel="stylesheet"/>
     <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
 </head>
 <body class="sb-nav-fixed">
@@ -37,22 +37,35 @@
                 <th scope="col">Akcje</th>
             </tr>
             </thead>
-            <c:forEach var="lesson" items="${lessons}">
+
             <tbody>
-            <tr>
-                <td>${lesson.date}</td>
-                <td>${lesson.time}</td>
-                <td>${lesson.status}</td>
-            <c:if test="${lesson.status.equals('Zakończona')}">
-                <td><a href="/panel/user/lesson/${lesson.id}"/>Oceń</td>
-                </c:if>
+                <c:forEach items="${lessons}" var="lesson">
+                    <tr>
+                    <td>${lesson.date}</td>
+                    <td>${lesson.time}</td>
+                    <td>${lesson.status}</td>
+                    <td>
+                        <c:forEach items="${lesson.status}" var="less">
+                            <c:if test="${less.equals('Zarezerwowana')}">
+                                <a href="/panel/user/cancel/${lesson.id}">Anuluj</a>
+                            </c:if>
+                            <c:if test="${less.equals('Zakończona')}">
+                                <a href="/panel/user/lesson/${lesson.id}">Oceń</a>
+                            </c:if>
+                            <c:if test="${less.equals('Oczekuje na komentarz')}">
+                                <a href="/panel/user/lesson/${lesson.id}">Oceń</a>
+                            </c:if>
+                        </c:forEach>
+                    </td>
+                    </tr>
+                </c:forEach>
             </tbody>
-            </c:forEach>
         </table>
         <jsp:include page="../../views/static/footer.jsp"></jsp:include>
     </div>
 </div>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        crossorigin="anonymous"></script>
 <script src="../../../js/scripts.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" crossorigin="anonymous"></script>
 <script src="../../../js/datatables-simple-demo.js"></script>

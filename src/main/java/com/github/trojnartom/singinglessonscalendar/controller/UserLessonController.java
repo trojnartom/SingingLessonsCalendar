@@ -8,6 +8,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpSession;
@@ -30,7 +31,10 @@ public class UserLessonController {
     }
 
     @PostMapping("/lesson/{id}")
-    public String userLessonData(@ModelAttribute("lesson") @Valid LessonEntity lesson, @PathVariable Long id) {
+    public String userLessonData(@ModelAttribute("lesson") @Valid LessonEntity lesson, BindingResult result, @PathVariable Long id) {
+        if(result.hasErrors()) {
+            return "redirect:/panel/user/lesson/" + id;
+        }
         lesson.setRating(lesson.getRating());
         lessonRepository.save(lesson);
 
