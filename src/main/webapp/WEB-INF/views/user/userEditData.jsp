@@ -42,6 +42,7 @@
                 <form:hidden path="id" value="${user.id}"/>
                 <form:hidden path="email" value="${user.email}"/>
                 <form:hidden path="role" value="${user.role}"/>
+                <form:hidden path="login" value="${user.login}"/>
                 <input type="submit" value="Zapisz"/>
             </form:form>
             <div id="passwordHelpBlock" class="form-text">
