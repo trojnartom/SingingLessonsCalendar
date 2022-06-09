@@ -1,8 +1,10 @@
 package com.github.trojnartom.singinglessonscalendar;
 
 import com.github.trojnartom.singinglessonscalendar.model.LessonEntity;
+import com.github.trojnartom.singinglessonscalendar.model.RoleEntity;
 import com.github.trojnartom.singinglessonscalendar.model.UserEntity;
 import com.github.trojnartom.singinglessonscalendar.repository.LessonRepository;
+import com.github.trojnartom.singinglessonscalendar.repository.RoleRepository;
 import com.github.trojnartom.singinglessonscalendar.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -24,35 +26,46 @@ public class TestDataLoader {
 
     private final UserRepository userRepository;
     private final LessonRepository lessonRepository;
+    private final RoleRepository roleRepository;
 
     @EventListener
     @Transactional
     public void loadData(ContextRefreshedEvent event) {
         log.debug("Loading data...");
 
+        roleRepository.save(RoleEntity.builder()
+                .role("ADMIN")
+                .build());
+        roleRepository.save(RoleEntity.builder()
+                .role("USER")
+                .build());
+
         userRepository.save(UserEntity.builder()
+                .login("trojnart")
                 .firstName("Tomasz")
                 .lastName("Trojnar")
                 .email("trojnar.t@gmail.com")
                 .password("123")
-                .role("ADMIN")
+                .role(roleRepository.findByRole("ADMIN"))
                 .enable(true)
                 .build());
         userRepository.save(UserEntity.builder()
+                .login("natka")
                 .firstName("Natalia")
                 .lastName("Trojnar")
                 .email("ncieslachowska@gmail.com")
                 .password("456")
-                .role("USER")
+                .role(roleRepository.findByRole("USER"))
                 .enable(true)
                 .build());
 
         userRepository.save(UserEntity.builder()
+                .login("maria")
                 .firstName("Maria")
                 .lastName("Trojnar")
                 .email("mariatrojnar@hotmail.com")
                 .password("888")
-                .role("USER")
+                .role(roleRepository.findByRole("USER"))
                 .enable(false)
                 .build());
 

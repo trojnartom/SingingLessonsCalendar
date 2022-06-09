@@ -36,13 +36,13 @@ public class LessonEntity {
     @NotBlank
     private String status;
 
-    public String getFullTime() {
-        return this.getDate() + " " + this.getTime();
-    }
-
     @ManyToOne
     @JoinColumn(name = "user_id")
     private UserEntity user;
+
+    public String getFullTime() {
+        return this.getDate() + " " + this.getTime();
+    }
 
 //    @NotNull
 //    @Size(min = 30, max = 60)

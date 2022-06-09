@@ -24,6 +24,10 @@ public class UserEntity {
     private Long id;
 
     @NotNull
+    @Column(name = "login")
+    private String login;
+
+    @NotNull
     @Size(min = 3)
     @Column(name = "first_name")
     private String firstName;
@@ -39,8 +43,9 @@ public class UserEntity {
     @Column(name = "phone_number")
     private String phoneNumber;
 
-    @Column(name = "role")
-    private String role;
+    @ManyToOne
+    @JoinColumn(name = "role")
+    private RoleEntity role;
 
     @NotNull
     @Column(name = "password")
