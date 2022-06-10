@@ -49,11 +49,11 @@
                             <c:if test="${less.equals('Zarezerwowana')}">
                                 <a href="/panel/user/cancel/${lesson.id}">Anuluj</a>
                             </c:if>
-                            <c:if test="${less.equals('Zakończona')}">
-                                <a href="/panel/user/lesson/${lesson.id}">Oceń</a>
-                            </c:if>
                             <c:if test="${less.equals('Oczekuje na komentarz')}">
                                 <a href="/panel/user/lesson/${lesson.id}">Oceń</a>
+                            </c:if>
+                            <c:if test="${less.equals('Zakończona')}">
+                                <a href="/panel/user/details/${lesson.id}">Szczegóły</a>
                             </c:if>
                         </c:forEach>
                     </td>
