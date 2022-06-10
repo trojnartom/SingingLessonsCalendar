@@ -24,12 +24,13 @@
             <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown"
                aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
             <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                <c:if test="${user.role.equals('USER')}">
+                <c:if test="${user.role.role.equals('USER')}">
                     <li><a class="dropdown-item" href="/panel/user/edit/${user.id}">Edytuj dane</a></li>
                 </c:if>
-                <c:if test="${user.role.equals('ADMIN')}">
+                <c:if test="${user.role.role.equals('ADMIN')}">
                     <li><a class="dropdown-item" href="/panel/admin/edit/${user.id}">Edytuj dane</a></li>
                 </c:if>
+
                 <li>
                     <hr class="dropdown-divider"/>
                 </li>
