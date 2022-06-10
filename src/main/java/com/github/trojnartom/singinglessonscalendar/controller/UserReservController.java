@@ -15,7 +15,9 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import java.util.Comparator;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Controller
 @RequestMapping("/panel/user/")
@@ -30,7 +32,9 @@ public class UserReservController {
     @GetMapping("/reserve/{id}")
     public String userReservView (@PathVariable Long id, Model model) {
         UserEntity user = userRepository.findUserById(id);
-        List<LessonEntity> lessons = lessonRepository.findAllByStatus("Utworzona");
+        List<LessonEntity> lessons = lessonRepository.findAllByStatus("Utworzona").stream()
+                .sorted(Comparator.comparing(LessonEntity::getDate))
+                .collect(Collectors.toList());;
         model.addAttribute("lesson", new LessonEntity());
         model.addAttribute("lessons", lessons);
         model.addAttribute("user", user);
