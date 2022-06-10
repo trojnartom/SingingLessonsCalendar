@@ -1,8 +1,10 @@
 package com.github.trojnartom.singinglessonscalendar.controller;
 
 import com.github.trojnartom.singinglessonscalendar.model.LessonEntity;
+import com.github.trojnartom.singinglessonscalendar.model.RoleEntity;
 import com.github.trojnartom.singinglessonscalendar.model.UserEntity;
 import com.github.trojnartom.singinglessonscalendar.repository.LessonRepository;
+import com.github.trojnartom.singinglessonscalendar.repository.RoleRepository;
 import com.github.trojnartom.singinglessonscalendar.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
@@ -28,6 +30,7 @@ public class AdminLessonsListController {
         List<LessonEntity> lessons = lessonRepository.findAll().stream()
                 .sorted(Comparator.comparing(LessonEntity::getDate))
                 .collect(Collectors.toList());
+        System.out.println(user.getRole().getRole() + "tutaj jest rola");
         model.addAttribute("user", user);
         model.addAttribute("lessons", lessons);
 

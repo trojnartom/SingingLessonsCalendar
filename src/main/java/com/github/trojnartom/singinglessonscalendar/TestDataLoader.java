@@ -75,38 +75,46 @@ public class TestDataLoader {
                 .status("Zarezerwowana")
                 .user(userRepository.findUserById(1L))
                 .build());
+
         lessonRepository.save(LessonEntity.builder()
                 .date(LocalDate.parse("2022-07-27"))
                 .time(LocalTime.parse("18:00"))
                 .status("Zarezerwowana")
                 .user(userRepository.findUserById(2L))
                 .build());
+
         lessonRepository.save(LessonEntity.builder()
                 .date(LocalDate.parse("2022-10-03"))
                 .time(LocalTime.parse("15:00"))
                 .status("Utworzona")
                 .build());
+
         lessonRepository.save(LessonEntity.builder()
                 .date(LocalDate.parse("2022-10-03"))
                 .time(LocalTime.parse("16:00"))
                 .status("Utworzona")
                 .build());
+
         lessonRepository.save(LessonEntity.builder()
                 .date(LocalDate.parse("2022-10-03"))
                 .time(LocalTime.parse("17:00"))
                 .status("Utworzona")
                 .build());
+
         lessonRepository.save(LessonEntity.builder()
                 .date(LocalDate.parse("2022-12-03"))
                 .time(LocalTime.parse("16:00"))
                 .status("Utworzona")
                 .build());
+
         lessonRepository.save(LessonEntity.builder()
                 .date(LocalDate.parse("2022-03-17"))
                 .time(LocalTime.parse("17:30"))
                 .status("Oczekuje na komentarz")
                 .user(userRepository.findUserById(1L))
+                .rating(9)
                 .build());
+
         lessonRepository.save(LessonEntity.builder()
                 .date(LocalDate.parse("2022-02-17"))
                 .time(LocalTime.parse("17:30"))
@@ -114,6 +122,55 @@ public class TestDataLoader {
                 .comments("Tutaj już jest komentarz")
                 .user(userRepository.findUserById(2L))
                 .build());
+
+
+        lessonRepository.save(LessonEntity.builder()
+                .date(LocalDate.parse("2022-04-03"))
+                .time(LocalTime.parse("17:00"))
+                .status("Oczekuje na komentarz")
+                .user(userRepository.findUserById(2L))
+                .build());
+
+        lessonRepository.save(LessonEntity.builder()
+                .date(LocalDate.parse("2022-01-27"))
+                .time(LocalTime.parse("18:00"))
+                .status("Zakończona")
+                .user(userRepository.findUserById(2L))
+                .comments("Komentarz do lekcji")
+                .build());
+
+        lessonRepository.save(LessonEntity.builder()
+                .date(LocalDate.parse("2022-07-30"))
+                .time(LocalTime.parse("15:00"))
+                .status("Utworzona")
+                .build());
+
+        lessonRepository.save(LessonEntity.builder()
+                .date(LocalDate.parse("2022-10-07"))
+                .time(LocalTime.parse("16:00"))
+                .status("Utworzona")
+                .build());
+
+        lessonRepository.save(LessonEntity.builder()
+                .date(LocalDate.parse("2022-11-05"))
+                .time(LocalTime.parse("17:00"))
+                .status("Utworzona")
+                .build());
+
+        lessonRepository.save(LessonEntity.builder()
+                .date(LocalDate.parse("2022-08-03"))
+                .time(LocalTime.parse("16:00"))
+                .status("Utworzona")
+                .build());
+
+        lessonRepository.save(LessonEntity.builder()
+                .date(LocalDate.parse("2022-01-27"))
+                .time(LocalTime.parse("18:00"))
+                .status("Zakończona")
+                .user(userRepository.findUserById(1L))
+                .comments("Komentarz do lekcji dla użytkownika 1")
+                .build());
+
         log.debug("Data added succesfully");
     }
 }
