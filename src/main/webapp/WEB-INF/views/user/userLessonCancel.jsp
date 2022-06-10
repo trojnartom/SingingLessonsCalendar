@@ -39,9 +39,8 @@
             <form:hidden path="time"/>
             <form:hidden path="status"/>
             <input type="submit" value="TAK">
-            <button href="/panel/user/list/${user.id}">NIE</button>
+            <button type="button" onclick="location.href='/panel/user/list/${user.id}'">NIE</button>
         </form:form>
-
 
         </div>
         <jsp:include page="../../views/static/footer.jsp"></jsp:include>
