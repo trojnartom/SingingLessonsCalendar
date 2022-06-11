@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import java.time.LocalDate;
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -30,7 +31,6 @@ public class AdminLessonsListController {
         List<LessonEntity> lessons = lessonRepository.findAll().stream()
                 .sorted(Comparator.comparing(LessonEntity::getDate))
                 .collect(Collectors.toList());
-        System.out.println(user.getRole().getRole() + "tutaj jest rola");
         model.addAttribute("user", user);
         model.addAttribute("lessons", lessons);
 
