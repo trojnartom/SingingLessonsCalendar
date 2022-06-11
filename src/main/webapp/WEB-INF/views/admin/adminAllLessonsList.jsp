@@ -47,14 +47,19 @@
                     <td>${lesson.user.firstName} ${lesson.user.lastName}</td>
                     <td>${lesson.status}</td>
                     <td>${lesson.rating}</td>
-                    <td>
+
+                    <c:if test="${lesson.status.equals('Zarezerwowana')}">
+                        <td><a href="/panel/admin/accept/${lesson.id}"/>Zrealizuj</td>
+                    </c:if>
+
                     <c:if test="${lesson.status.equals('Oczekuje na komentarz')}">
                         <td><a href="/panel/admin/comment/${lesson.id}"/>Skomentuj</td>
                     </c:if>
+
                     <c:if test="${lesson.status.equals('Zakończona')}">
                         <td><a href="/panel/admin/details/${lesson.id}"/>Szczegóły</td>
                     </c:if>
-                    </td>
+
                 </tr>
                 </tbody>
             </c:forEach>
