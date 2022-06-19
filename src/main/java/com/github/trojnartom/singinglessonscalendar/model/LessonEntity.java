@@ -16,7 +16,7 @@ import java.util.Date;
 @Table(name = "lessons")
 @Getter
 @Setter
-@ToString(callSuper = true)
+@ToString
 @AllArgsConstructor
 @NoArgsConstructor
 @SuperBuilder
@@ -25,6 +25,8 @@ public class LessonEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private LocalDate date;
     private LocalTime time;
 
