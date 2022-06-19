@@ -39,15 +39,15 @@
                 <form:errors path="phoneNumber"/>  </br>
                 Password: <form:password path="password" value="${user.password}"/>
                 <form:errors path="password"/>  </br>
-                <form:hidden path="email" value="${user.email}"/>
                 <form:hidden path="id" value="${user.id}"/>
-                <form:hidden path="role" value="${user.role}"/>
+                <form:hidden path="email" value="${user.email}"/>
                 <form:hidden path="enable" value="${user.enable}"/>
                 <form:hidden path="login" value="${user.login}"/>
+                <form:hidden path="role" value="${user.role.id}"/>
                 <input type="submit" value="Zapisz"/>
             </form:form>
             <div id="passwordHelpBlock" class="form-text">
-                Your password must be 8-20 characters long, contain letters and numbers, and must not contain spaces, special characters, or emoji.
+
             </div>
         </div>
 

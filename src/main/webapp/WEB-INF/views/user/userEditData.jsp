@@ -41,12 +41,12 @@
                 <form:errors path="password"/>  </br>
                 <form:hidden path="id" value="${user.id}"/>
                 <form:hidden path="email" value="${user.email}"/>
-                <form:hidden path="role" value="${user.role}"/>
+                <form:hidden path="role" value="${user.role.id}"/>
                 <form:hidden path="login" value="${user.login}"/>
                 <input type="submit" value="Zapisz"/>
             </form:form>
             <div id="passwordHelpBlock" class="form-text">
-            Your password must be 8-20 characters long, contain letters and numbers, and must not contain spaces, special characters, or emoji.
+
             </div>
         </div>
 
