@@ -30,6 +30,10 @@ public class AdminEditDataController {
         if (result.hasErrors()) {
             return "redirect:/panel/admin/edit/" + user.getId();
         }
+        user.setFirstName(user.getFirstName());
+        user.setLastName(user.getLastName());
+        user.setPhoneNumber(user.getPhoneNumber());
+        user.setPassword(user.getPassword());
         userRepository.save(user);
         return "redirect:/panel/admin/list/" + user.getId();
     }
