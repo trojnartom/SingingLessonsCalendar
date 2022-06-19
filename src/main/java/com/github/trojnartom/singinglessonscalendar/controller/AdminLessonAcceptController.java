@@ -22,7 +22,6 @@ public class AdminLessonAcceptController {
 
     @GetMapping("/accept/{lessonId}")
     public String userLessonView (Model model, @PathVariable Long lessonId) {
-        UserEntity user = userRepository.findUserById(lessonRepository.findLessonEntitiesById(lessonId).getUser().getId());
         model.addAttribute("user", userRepository.findUserById(lessonRepository.findLessonEntitiesById(lessonId).getUser().getId()));
         model.addAttribute("lesson", lessonRepository.findLessonEntitiesById(lessonId));
         return "/admin/adminAcceptLesson";
