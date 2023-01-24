@@ -41,6 +41,7 @@
                 <li class="nav-item"><a class="nav-link" href="#about">O mnie</a></li>
                 <li class="nav-item"><a class="nav-link" href="#projects">Wideo</a></li>
                 <li class="nav-item"><a class="nav-link" href="#signup">Kontakt</a></li>
+                <li class="nav-item"><a class="nav-link" href="http://localhost:8080/panel/admin/dashboard/1">Panel</a></li>
             </ul>
         </div>
     </div>
